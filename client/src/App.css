@@ -1,0 +1,180 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 900px;
+    background-color: whitesmoke;
+    padding: 20px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0 5rem 0 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: whitesmoke;
+    padding: 1rem;
+    display: block;
+}
+
+nav li:hover {
+    background-color: #555;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header a {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    margin: 5rem;
+    font-style: italic
+}
+
+.post-container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+
+@media (max-width:800px) {
+    .post-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .post-info-container {
+        align-items: center;
+    }
+
+    .post-img-container img {
+        width: 100%;
+        height: auto;
+    }
+
+
+}
+
+.post-img {
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.post-info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title {
+    font-size: xx-large;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.user-date-container {
+    display: flex;
+    gap: 10px;
+}
+
+.username {
+    font-size: smaller;
+}
+
+.date {
+    font-size: smaller;
+    color: rgb(151, 161, 170);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+
+/*nav responsive*/
+
+.hamburger-menu {
+    position: absolute;
+    top: .05rem;
+    right: 2rem;
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 21px;
+    color: white;
+    font-size: xx-large;
+}
+
+
+@media (max-width: 800px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 1rem;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: .5rem 1rem;
+        margin-top: 10px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .header {
+        padding-top: 10px;
+    }
+
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: 100%;
+
+    }
+}

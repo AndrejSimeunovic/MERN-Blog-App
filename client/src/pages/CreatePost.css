@@ -1,0 +1,23 @@
+.create-post-container {
+    width: 900px;
+    height: auto;
+}
+
+.create-post-container input {
+    width: auto
+}
+
+.excerpt {
+    height: 100px;
+}
+
+.post-content {
+    height: 300px;
+}
+
+@media (max-width:900px) {
+    .create-post-container {
+        width: 100%;
+        height: auto;
+    }
+}
