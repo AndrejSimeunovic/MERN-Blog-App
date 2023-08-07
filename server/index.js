@@ -17,7 +17,6 @@ const Comment = require("./models/comment");
 const salt = bcrypt.genSaltSync(10);
 
 const app = express();
-db_connect();
 
 app.use(
   cors({
@@ -26,6 +25,9 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
+db_connect();
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
