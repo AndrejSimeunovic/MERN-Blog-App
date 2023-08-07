@@ -12,7 +12,7 @@ export default function Register() {
   useEffect(() => {
     const checkCookie = async () => {
       try {
-        await axios.get("http://localhost:3000/register", {
+        await axios.get("https://mern-blog-app-delta.vercel.app/register", {
           withCredentials: true,
         });
         navigate("/");
@@ -26,7 +26,7 @@ export default function Register() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/register", {
+      const response = await axios.post("https://mern-blog-app-delta.vercel.app/register", {
         username: userName.current.value,
         password: password.current.value,
       });

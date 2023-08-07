@@ -20,7 +20,7 @@ export default function EditPost() {
     const getPost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/post/${postId}`,
+          `https://mern-blog-app-delta.vercel.app/post/${postId}`,
           { withCredentials: true }
         );
         setPostInfo(response.data);
@@ -36,7 +36,7 @@ export default function EditPost() {
     e.preventDefault();
     try {
       const response = await axios.put(
-        "http://localhost:3000/post",
+        "https://mern-blog-app-delta.vercel.app/post",
         {
           title: titleRef.current.value,
           image: imageRef.current.files[0],
@@ -61,7 +61,7 @@ export default function EditPost() {
     const response = confirm("Are you sure you want to delete this post?");
     if (response) {
       try {
-        const res = await axios.delete(`http://localhost:3000/post/${postId}`, {
+        const res = await axios.delete(`https://mern-blog-app-delta.vercel.app/post/${postId}`, {
           withCredentials: true,
         });
         toast.success("Post deleted");

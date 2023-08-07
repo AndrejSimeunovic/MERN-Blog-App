@@ -17,7 +17,7 @@ export default function CreatePost() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/create-post",
+        "https://mern-blog-app-delta.vercel.app/create-post",
         {
           title: titleRef.current.value,
           image: imageRef.current.files[0],
