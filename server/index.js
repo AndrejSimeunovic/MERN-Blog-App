@@ -8,7 +8,7 @@ const multer = require("multer");
 const upload = multer({ dest: "./uploads" });
 const fs = require("fs");
 const bcrypt = require("bcrypt");
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 
 const User = require("./models/user");
 const Post = require("./models/post");
@@ -19,7 +19,13 @@ const salt = bcrypt.genSaltSync(10);
 const app = express();
 db_connect();
 
-app.use(cors({ credentials: true, origin: "https://mern-blog-app-frontend-jet.vercel.app" }));
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://mern-blog-app-frontend-jet.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
