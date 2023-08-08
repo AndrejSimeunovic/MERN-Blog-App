@@ -12,7 +12,7 @@ export default function Navbar() {
   useEffect(() => {
     const checkCookie = async () => {
       try {
-        const response = await axios.get("https://mern-blog-app-delta.vercel.app/profile", {
+        const response = await axios.get("http://localhost:3000/profile", {
           withCredentials: true,
         });
         const user = response.data.user;
@@ -26,7 +26,7 @@ export default function Navbar() {
 
   async function logOut() {
     toggleMenu();
-    await axios.get("https://mern-blog-app-delta.vercel.app/logout", {
+    await axios.get("http://localhost:3000/logout", {
       withCredentials: true,
     });
     toast.success("Logged out!");

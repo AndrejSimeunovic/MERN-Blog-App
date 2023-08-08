@@ -10,7 +10,7 @@ export default function Post({ author, title, excerpt, image, createdAt, id }) {
       <div className="post-img-container">
         <img
           className="post-img"
-          src={`https://mern-blog-app-delta.vercel.app/${image}`}
+          src={`http://localhost:3000/${image}`}
           alt="post"
           onClick={() => navigate(`/post/${id}`)}
         />

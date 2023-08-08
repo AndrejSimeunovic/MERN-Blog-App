@@ -13,7 +13,7 @@ export default function Login() {
   useEffect(() => {
     const checkCookie = async () => {
       try {
-        await axios.get("https://mern-blog-app-delta.vercel.app/login", {
+        await axios.get("http://localhost:3000/login", {
           withCredentials: true,
         });
         navigate("/");
@@ -28,7 +28,7 @@ export default function Login() {
     e.preventDefault();
     try {
       await axios.post(
-        "https://mern-blog-app-delta.vercel.app/login",
+        "http://localhost:3000/login",
         {
           username: userNameRef.current.value,
           password: passwordRef.current.value,

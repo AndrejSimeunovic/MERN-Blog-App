@@ -19,7 +19,7 @@ export default function FullPost() {
     const getPost = async () => {
       try {
         const response = await axios.get(
-          `https://mern-blog-app-delta.vercel.app/post/${postId}`,
+          `http://localhost:3000/post/${postId}`,
           { withCredentials: true }
         );
         setPostInfo(response.data);
@@ -35,7 +35,7 @@ export default function FullPost() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://mern-blog-app-delta.vercel.app/post/comment",
+        "http://localhost:3000/post/comment",
         {
           comment: commentRef.current.value,
           postId,
@@ -55,7 +55,7 @@ export default function FullPost() {
   async function deleteComment(commentId) {
     try {
       const response = await axios.delete(
-        `https://mern-blog-app-delta.vercel.app/post/comment/${commentId}/${postId}`,
+        `http://localhost:3000/post/comment/${commentId}/${postId}`,
         {
           withCredentials: true,
         }
@@ -94,14 +94,14 @@ export default function FullPost() {
           ) : null}
           <img
             className="fullpost-img"
-            src={`https://mern-blog-app-delta.vercel.app/${postInfo.image}`}
+            src={`http://localhost:3000/${postInfo.image}`}
             alt="post"
           />
           <div
             style={{ lineHeight: "1.6rem" }}
             dangerouslySetInnerHTML={{ __html: postInfo.content }}
           />
-
+          {/* comments*/}
           <div className="comment-container">
             {postInfo.comments.length > 0 ? (
               <>
@@ -122,6 +122,7 @@ export default function FullPost() {
               </>
             ) : null}
 
+            {/**Leave a comment */}
             <form onSubmit={postComment} className="comment-form-container">
               <div className="comment-title">Leave a comment</div>
               <textarea
